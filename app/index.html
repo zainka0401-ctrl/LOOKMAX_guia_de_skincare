@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOOKMAX | Guía de Skincare, Cabello y Protocolo por Sexo</title>
+<meta name="description" content="Guía profesional de cuidado facial, capilar y protocolos personalizados para hombre y mujer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0e0e0e;
+  --ink-2:#3d3d3d;
+  --muted:#76726b;
+  --line:#e6e2db;
+  --paper:#faf9f7;
+  --card:#ffffff;
+  --accent:#8c7a56;
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Manrope', 'Segoe UI', Arial, sans-serif;
+  --ease:cubic-bezier(.22,.8,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ============ NAVBAR ============ */
+header{position:fixed;inset:0 0 auto 0;z-index:1000;background:rgba(250,249,247,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:all .4s var(--ease)}
+header.scrolled{background:rgba(250,249,247,.96);border-bottom-color:var(--line);box-shadow:0 8px 30px rgba(0,0,0,.04)}
+nav{max-width:1200px;margin:auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+.logo{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:5px;text-decoration:none;text-transform:uppercase}
+.logo span{color:var(--accent)}
+.menu{display:flex;gap:34px;list-style:none}
+.menu a,.menu button{background:none;border:none;color:var(--ink-2);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;position:relative;padding:4px 0;transition:color .3s}
+.menu a::after,.menu button::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--ink);transition:width .35s var(--ease)}
+.menu a:hover,.menu button:hover{color:var(--ink)}
+.menu a:hover::after,.menu button:hover::after{width:100%}
+.nav-btn{background:var(--ink);color:#fff;padding:12px 24px;border:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s var(--ease)}
+.nav-btn:hover{background:var(--accent);transform:translateY(-2px)}
+.burger{display:none;background:none;border:none;width:32px;height:32px;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:4px;width:24px;height:1.5px;background:var(--ink);content:'';transition:.3s}
+.burger span{top:15px}.burger span::before{top:-7px;left:0}.burger span::after{top:7px;left:0}
+.mobile-menu{display:none}
+
+/* ============ HERO ============ */
+.hero{padding:150px 8% 90px;background:radial-gradient(circle at 85% 20%,#efebe3 0%,transparent 50%),linear-gradient(180deg,#fff,var(--paper));text-align:center;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-block;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(52px,8.5vw,112px);line-height:.95;letter-spacing:-1px;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.hero-lead{color:var(--ink-2);font-size:17px;font-weight:300;max-width:600px;margin:0 auto 54px}
+
+/* Selector de perfil */
+.picker-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:block}
+.picker{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto}
+.profile-card{position:relative;text-align:left;background:var(--card);border:1px solid var(--line);padding:30px 30px 28px;transition:all .45s var(--ease);overflow:hidden}
+.profile-card::before{content:'';position:absolute;inset:0;background:var(--ink);transform:translateY(100%);transition:transform .5s var(--ease)}
+.profile-card > *{position:relative;z-index:1;transition:color .4s}
+.profile-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.08);border-color:var(--ink)}
+.profile-card:hover::before,.profile-card[aria-expanded="true"]::before{transform:translateY(0)}
+.profile-card:hover > *,.profile-card[aria-expanded="true"] > *{color:#fff}
+.profile-card .pc-num{font-size:11px;letter-spacing:3px;font-weight:600;color:var(--accent)}
+.profile-card .pc-title{display:block;font-family:var(--serif);font-size:38px;font-weight:600;line-height:1.1;margin:10px 0 6px}
+.profile-card .pc-sub{display:block;font-size:13px;color:var(--muted);font-weight:400}
+.profile-card .pc-arrow{position:absolute;right:26px;top:50%;transform:translateY(-50%);font-size:22px;transition:transform .45s var(--ease)}
+.profile-card[aria-expanded="true"] .pc-arrow{transform:translateY(-50%) rotate(180deg)}
+
+/* Panel de perfil */
+.profile-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease);max-width:1000px;margin:0 auto}
+.profile-panel.open{grid-template-rows:1fr}
+.profile-panel > .inner{overflow:hidden;min-height:0}
+.panel-body{margin-top:28px;background:var(--card);border:1px solid var(--line);padding:38px;text-align:left;box-shadow:0 20px 50px rgba(0,0,0,.05)}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:10px}
+.panel-head h2{font-family:var(--serif);font-size:34px;font-weight:600}
+.panel-head p{font-size:13px;color:var(--muted)}
+.close-panel{background:none;border:1px solid var(--line);padding:8px 16px;font-size:11px;letter-spacing:2px;font-weight:600;text-transform:uppercase;transition:.3s}
+.close-panel:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ============ SECCIONES ============ */
+section.block{padding:110px 8%}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title small{display:block;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title h2{font-family:var(--serif);font-size:clamp(38px,5vw,60px);font-weight:600;line-height:1.05}
+.section-title p{color:var(--muted);max-width:620px;margin:16px auto 0;font-weight:300;font-size:16px}
+.wrap{max-width:900px;margin:auto}
+
+/* ============ ACORDEÓN ============ */
+.accordion{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-head{width:100%;display:flex;align-items:center;gap:22px;background:none;border:none;text-align:left;padding:26px 6px;color:var(--ink);transition:padding .35s var(--ease),color .3s}
+.acc-head:hover{padding-left:16px}
+.acc-num{font-size:12px;font-weight:600;letter-spacing:2px;color:var(--accent);min-width:28px}
+.acc-title{flex:1}
+.acc-title strong{display:block;font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.2}
+.acc-title span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.acc-icon{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;position:relative;flex-shrink:0;transition:all .4s var(--ease)}
+.acc-icon::before,.acc-icon::after{content:'';position:absolute;top:50%;left:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:all .4s var(--ease)}
+.acc-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc-item.open .acc-icon{background:var(--ink);border-color:var(--ink);transform:rotate(180deg)}
+.acc-item.open .acc-icon::before,.acc-item.open .acc-icon::after{background:#fff}
+.acc-item.open .acc-icon::after{transform:translate(-50%,-50%) rotate(0)}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.acc-item.open > .acc-body{grid-template-rows:1fr}
+.acc-body > div{overflow:hidden;min-height:0}
+.acc-content{padding:2px 6px 30px 56px}
+.acc-content > p{color:var(--ink-2);font-weight:300;font-size:15px;margin-bottom:16px;max-width:680px}
+.list{list-style:none}
+.list li{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid #f0ede7;font-size:14px;color:var(--ink-2)}
+.list li:last-child{border-bottom:none}
+.list li::before{content:'';width:6px;height:6px;background:var(--accent);transform:rotate(45deg);margin-top:9px;flex-shrink:0}
+.list strong{color:var(--ink);font-weight:600}
+.note{margin-top:14px;padding:14px 18px;background:var(--paper);border-left:2px solid var(--accent);font-size:13px;color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.cols h4{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
+
+/* ============ CTA / FOOTER ============ */
+.cta{text-align:center;padding:120px 8%;background:var(--ink);color:#fff}
+.cta h2{font-family:var(--serif);font-size:clamp(40px,6vw,72px);font-weight:600;line-height:1.05;margin-bottom:18px}
+.cta h2 em{color:var(--accent);font-style:italic}
+.cta p{color:#b9b5ad;font-weight:300;max-width:520px;margin:0 auto 34px}
+.btn-light{display:inline-block;background:#fff;color:var(--ink);padding:16px 36px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:none;transition:all .3s var(--ease)}
+.btn-light:hover{background:var(--accent);color:#fff;transform:translateY(-3px)}
+footer{background:#0a0a0a;color:#8a867e;text-align:center;padding:34px 8%;font-size:12px;letter-spacing:1.5px}
+footer strong{color:#fff}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.active{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .menu,.nav-btn{display:none}
+  .burger{display:block}
+  .mobile-menu{display:none;flex-direction:column;background:var(--paper);border-top:1px solid var(--line);padding:10px 28px 20px}
+  .mobile-menu.show{display:flex}
+  .mobile-menu a,.mobile-menu button{background:none;border:none;text-align:left;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:2px;font-weight:600;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+  .cols{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:640px){
+  .hero{padding:125px 20px 70px}
+  section.block{padding:75px 20px}
+  .picker{grid-template-columns:1fr}
+  .panel-body{padding:24px 18px}
+  .panel-head{flex-direction:column;align-items:flex-start;gap:10px}
+  .acc-head{gap:14px}
+  .acc-title strong{font-size:22px}
+  .acc-content{padding-left:6px}
+  .acc-num{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+
+/* ============ COMPARADOR ANTES / DESPUÉS ============ */
+.ba{max-width:680px;margin:0 auto 52px}
+.ba-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+.ba-head strong{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.1}
+.ba-head span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.ba-stage{--pos:50%;position:relative;aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:#ebe5db;user-select:none;-webkit-user-select:none;touch-action:pan-y;box-shadow:0 20px 50px rgba(0,0,0,.06)}
+.ba-layer{position:absolute;inset:0}
+.ba-layer svg,.ba-layer img{width:100%;height:100%;display:block;object-fit:cover}
+.ba-layer.after{clip-path:inset(0 0 0 var(--pos))}
+.ba-tag{position:absolute;top:14px;padding:6px 12px;font-size:10px;letter-spacing:3px;font-weight:700;text-transform:uppercase;background:rgba(14,14,14,.8);color:#fff;pointer-events:none;z-index:2}
+.ba-tag.l{left:14px}
+.ba-tag.r{right:14px;background:rgba(140,122,86,.95)}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);transform:translateX(-1px);pointer-events:none;z-index:2}
+.ba-handle i{position:absolute;top:50%;left:50%;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.28);transform:translate(-50%,-50%);display:grid;place-items:center;font-style:normal;font-size:15px;font-weight:700;letter-spacing:2px;color:var(--ink)}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3}
+.ba-stage:focus-within .ba-handle i{outline:2px solid var(--accent);outline-offset:3px}
+.ba-note{font-size:13px;color:var(--muted);margin-top:14px;font-weight:300;max-width:620px}
+.ba-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+.ba-btn{position:relative;border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 16px;font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;cursor:pointer;transition:all .3s var(--ease);font-family:inherit}
+.ba-btn:hover,.ba-btn:focus-within{border-color:var(--ink);background:var(--ink);color:#fff}
+.ba-btn input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer}
+.ba-priv{font-size:11px;color:var(--muted);flex-basis:100%}
+@media(max-width:640px){.ba-head strong{font-size:23px}.ba-tag{font-size:9px;padding:5px 9px}.ba-handle i{width:40px;height:40px}}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header id="header">
+  <nav>
+    <a href="#inicio" class="logo">Look<span>max</span></a>
+    <ul class="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#skincare">Skincare</a></li>
+      <li><a href="#cabello">Cabello</a></li>
+      <li><button type="button" data-open-profile="masculino">Masculino</button></li>
+      <li><button type="button" data-open-profile="femenino">Femenino</button></li>
+    </ul>
+    <a href="#inicio" class="nav-btn" data-scroll-picker>Elegir protocolo</a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#skincare">Skincare</a>
+    <a href="#cabello">Cabello</a>
+    <button type="button" data-open-profile="masculino">Protocolo masculino</button>
+    <button type="button" data-open-profile="femenino">Protocolo femenino</button>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO + SELECTOR -->
+  <section class="hero" id="selector">
+    <div class="reveal">
+      <span class="eyebrow">Guía de perfeccionamiento</span>
+      <h1>Domina tu<br><em>imagen.</em></h1>
+      <p class="hero-lead">Cuidado facial, capilar y estética con enfoque científico. Elige tu perfil para ver tu protocolo personalizado.</p>
+
+      <span class="picker-label">Selecciona tu protocolo</span>
+      <div class="picker">
+        <button type="button" class="profile-card" data-open-profile="masculino" aria-expanded="false" aria-controls="profilePanel">
+          <span class="pc-num">01</span>
+          <span class="pc-title">Masculino</span>
+          <span class="pc-sub">Piel, barba, cabello y presencia</span>
+          <span class="pc-arrow">⌄</span>
+        </button>
+        <button type="button" class="profile-card" data-open-profile="femenino" aria-expanded="false" aria-controls="profilePanel">
+          <span class="pc-num">02</span>
+          <span class="pc-title">Femenino</span>
+          <span class="pc-sub">Piel, cabello, cuidado y bienestar</span>
+          <span class="pc-arrow">⌄</span>
+        </button>
+      </div>
+
+      <!-- PANEL DESPLEGABLE -->
+      <div class="profile-panel" id="profilePanel" aria-live="polite">
+        <div class="inner">
+
+          <!-- MASCULINO -->
+          <div class="panel-body" data-profile="masculino" hidden>
+            <div class="panel-head">
+              <div>
+                <h2>Protocolo Masculino</h2>
+                <p>Enfoque en piel gruesa, vello facial y estructura capilar.</p>
+              </div>
+              <button type="button" class="close-panel" data-close-panel>Cerrar</button>
+            </div>
+            <div class="accordion" data-single>
+              <div class="acc-item open">
+                <button class="acc-head" aria-expanded="true"><span class="acc-num">01</span><span class="acc-title"><strong>Rostro y barba</strong><span>Afeitado, hidratación y exfoliación</span></span><span class="acc-icon"></span></button>
+                <div class="acc-body"><div><div class="acc-content">
+                  <p>La piel masculina suele ser más gruesa y producir más sebo por influencia de la testosterona, por eso requiere limpieza constante y un afeitado cuidadoso.</p>
+                  <ul class="list">
+                    <li><span><strong>Afeitado preciso:</strong> rasura a favor del vello con cuchillas limpias para evitar foliculitis e irritación.</span></li>
+                    <li><span><strong>Aceite para barba:</strong> hidrata el vello y la piel subyacente, previniendo descamación y picor.</span></li>
+                    <li><span><strong>Exfoliación semanal:</strong> elimina células muertas y reduce vellos encarnados en la línea mandibular.</span></li>
+                  </ul>
+                </div></div></div>
+              </div>
+              <div class="acc-item">
+                <button class="acc-head" aria-expanded="false"><span class="acc-num">02</span><span class="acc-title"><strong>Cabello y densidad</strong><span>Prevención y estilo estructurado</span></span><span class="acc-icon"></span></button>
+                <div class="acc-body"><div><div class="acc-content">
+                  <p>Prevención de la alopecia androgenética y cortes que realcen la estructura del rostro.</p>
+                  <ul class="list">
+                    <li><span><strong>Shampoo fortalecedor:</strong> fórmulas con cafeína o ketoconazol ayudan a mantener el cuero cabelludo en buen estado.</span></li>
+                    <li><span><strong>Cortes geométricos:</strong> Low Fade o Texturized Crop potencian la línea mandibular.</span></li>
+                    <li><span><strong>Fijación mate:</strong> prefiere arcillas sobre geles pesados para evitar apelmazamiento y brillo graso.</span></li>
+                  </ul>
+                </div></div></div>
+              </div>
+              <div class="acc-item">
+                <button class="acc-head" aria-expanded="false"><span class="acc-num">03</span><span class="acc-title"><strong>Postura y presencia</strong><span>Simetría y proyección física</span></span><span class="acc-icon"></span></button>
+                <div class="acc-body"><div><div class="acc-content">
+                  <p>Detalles que influyen en cómo te perciben desde el primer vistazo.</p>
+                  <ul class="list">
+                    <li><span><strong>Postura lingual (mewing):</strong> mantener la lengua apoyada en el paladar es popular, aunque la evidencia científica sobre cambios óseos en adultos es limitada.</span></li>
+                    <li><span><strong>Espalda y hombros:</strong> entrenarlos mejora la postura erguida, que proyecta seguridad y autoridad.</span></li>
+                  </ul>
+                </div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FEMENINO -->
+          <div class="panel-body" data-profile="femenino" hidden>
+            <div class="panel-head">
+              <div>
+                <h2>Protocolo Femenino</h2>
+                <p>Enfoque en luminosidad, nutrición capilar y bienestar.</p>
+              </div>
+              <button type="button" class="close-panel" data-close-panel>Cerrar</button>
+            </div>
+            <div class="accordion" data-single>
+              <div class="acc-item open">
+                <button class="acc-head" aria-expanded="true"><span class="acc-num">01</span><span class="acc-title"><strong>Rostro e hidratación</strong><span>Elasticidad, luminosidad y protección</span></span><span class="acc-icon"></span></button>
+                <div class="acc-body"><div><div class="acc-content">
+                  <p>Mantenimiento de la elasticidad y protección frente al fotoenvejecimiento.</p>
+                  <ul class="list">
+                    <li><span><strong>Doble limpieza:</strong> retira maquillaje, impurezas y protectores solares pesados sin fricción.</span></li>
+                    <li><span><strong>Ácido hialurónico:</strong> retiene agua en la piel para un acabado jugoso y flexible.</span></li>
+                    <li><span><strong>Protección solar avanzada:</strong> SPF 50 diario para prevenir manchas y líneas de expresión.</span></li>
+                  </ul>
+                </div></div></div>
+              </div>
+              <div class="acc-item">
+                <button class="acc-head" aria-expanded="false"><span class="acc-num">02</span><span class="acc-title"><strong>Cabello y largos</strong><span>Nutrición y protección térmica</span></span><span class="acc-icon"></span></button>
+                <div class="acc-body"><div><div class="acc-content">
+                  <p>Nutrición de medios a puntas y protección ante herramientas de calor.</p>
+                  <ul class="list">
+                    <li><span><strong>Mascarillas reparadoras:</strong> tratamientos de nutrición profunda o queratina una vez por semana.</span></li>
+                    <li><span><strong>Sellado de puntas:</strong> aceites ligeros (argán o jojoba) previenen horquilla y frizz.</span></li>
+                    <li><span><strong>Protección térmica:</strong> obligatoria antes de plancha, secador o rizador.</span></li>
+                  </ul>
+                </div></div></div>
+              </div>
+              <div class="acc-item">
+                <button class="acc-head" aria-expanded="false"><span class="acc-num">03</span><span class="acc-title"><strong>Armonía y bienestar</strong><span>Cuerpo, detalles y descanso</span></span><span class="acc-icon"></span></button>
+                <div class="acc-body"><div><div class="acc-content">
+                  <p>Presentación personal, cuidado corporal y hábitos de descanso.</p>
+                  <ul class="list">
+                    <li><span><strong>Tonificación corporal:</strong> movilidad, pilates o fuerza moderada para estilizar la silueta.</span></li>
+                    <li><span><strong>Detalles cuidados:</strong> manicura, hidratación corporal constante y aromas distintivos.</span></li>
+                  </ul>
+                </div></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKINCARE -->
+  <section class="block alt reveal" id="skincare">
+    <div class="section-title">
+      <small>01 — Protocolo facial</small>
+      <h2>Skincare a fondo</h2>
+      <p>Una piel limpia, uniforme y saludable refleja disciplina. Estructura tu rutina según las necesidades de tu rostro.</p>
+    </div>
+    <div class="wrap">
+      <!-- Para usar fotos reales: <figure data-ba="skin" data-before-src="fotos/piel-antes.jpg" data-after-src="fotos/piel-despues.jpg"></figure> -->
+      <figure data-ba="skin"></figure>
+      <div class="accordion" data-single>
+        <div class="acc-item open">
+          <button class="acc-head" aria-expanded="true"><span class="acc-num">01</span><span class="acc-title"><strong>Limpieza inteligente</strong><span>La base de toda rutina</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <p>Elimina impurezas, sebo acumulado y contaminación sin alterar la barrera cutánea.</p>
+            <ul class="list">
+              <li><span><strong>Limpiador neutro:</strong> gel o espuma suave, sin sulfatos agresivos, mañana y noche.</span></li>
+              <li><span><strong>Temperatura:</strong> agua templada o fría; el agua muy caliente deshidrata.</span></li>
+              <li><span><strong>Doble limpieza nocturna:</strong> si usas protector solar resistente, empieza con un limpiador de base oleosa.</span></li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false"><span class="acc-num">02</span><span class="acc-title"><strong>Ingredientes activos</strong><span>Tratamiento dirigido</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <p>Soluciones para corregir imperfecciones, controlar el brillo y mejorar la textura.</p>
+            <ul class="list">
+              <li><span><strong>Ácido salicílico (BHA 2%):</strong> penetra el poro para reducir puntos negros y brotes.</span></li>
+              <li><span><strong>Niacinamida (5%):</strong> regula el sebo, calma rojeces y unifica el tono.</span></li>
+              <li><span><strong>Vitamina C:</strong> antioxidante matutino que aporta luminosidad.</span></li>
+              <li><span><strong>Retinol (noche):</strong> estimula la renovación celular y el colágeno.</span></li>
+            </ul>
+            <div class="note">Introduce los activos de uno en uno y empieza el retinol 2 veces por semana para evitar irritación.</div>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false"><span class="acc-num">03</span><span class="acc-title"><strong>Hidratación y SPF</strong><span>Protección diaria</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <p>Mantiene la flexibilidad de la piel y frena buena parte del envejecimiento causado por el sol.</p>
+            <ul class="list">
+              <li><span><strong>Hidratante:</strong> gel para piel grasa, crema más rica para piel seca.</span></li>
+              <li><span><strong>SPF 50+:</strong> todos los días, sin excepción. Es el antiarrugas más efectivo.</span></li>
+              <li><span><strong>Acabado mate:</strong> bloqueadores fluidos sin toque graso evitan destellos.</span></li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false"><span class="acc-num">04</span><span class="acc-title"><strong>Estructura diaria</strong><span>Rutina de mañana y de noche</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <div class="cols">
+              <div>
+                <h4>Mañana</h4>
+                <ul class="list">
+                  <li><span>Limpiador suave con agua templada.</span></li>
+                  <li><span>Sérum antioxidante (vitamina C o niacinamida).</span></li>
+                  <li><span>Hidratante ligero en gel.</span></li>
+                  <li><span>Protector solar SPF 50+.</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Noche</h4>
+                <ul class="list">
+                  <li><span>Limpieza profunda para retirar suciedad y SPF.</span></li>
+                  <li><span>Activo: BHA 2–3 veces por semana o retinol.</span></li>
+                  <li><span>Crema reparadora con ceramidas.</span></li>
+                  <li><span>Bálsamo labial hidratante.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABELLO -->
+  <section class="block reveal" id="cabello">
+    <div class="section-title">
+      <small>02 — Hair mastery</small>
+      <h2>Salud y estilo capilar</h2>
+      <p>El cabello es el marco del rostro. Maximiza su densidad y salud con la técnica correcta.</p>
+    </div>
+    <div class="wrap">
+      <!-- Para usar fotos reales: <figure data-ba="hair" data-before-src="fotos/cabello-antes.jpg" data-after-src="fotos/cabello-despues.jpg"></figure> -->
+      <figure data-ba="hair"></figure>
+      <div class="accordion" data-single>
+        <div class="acc-item open">
+          <button class="acc-head" aria-expanded="true"><span class="acc-num">01</span><span class="acc-title"><strong>Tipo y porosidad</strong><span>Diagnóstico de tu hebra</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <p>Entender la estructura de tu cabello determina qué productos funcionarán en ti.</p>
+            <ul class="list">
+              <li><span><strong>Porosidad baja:</strong> el agua resbala; usa productos ligeros y calor suave para absorber hidratación.</span></li>
+              <li><span><strong>Porosidad alta:</strong> absorbe rápido pero se reseca; necesita aceites y mascarillas con proteína.</span></li>
+              <li><span><strong>Densidad:</strong> define la cantidad de producto para no saturar la raíz.</span></li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false"><span class="acc-num">02</span><span class="acc-title"><strong>Lavado y cuidado</strong><span>Higiene correcta</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <p>Técnicas para un cuero cabelludo limpio y libre de caspa o exceso de sebo.</p>
+            <ul class="list">
+              <li><span><strong>Frecuencia:</strong> de 2 a 4 veces por semana según grasa y actividad física.</span></li>
+              <li><span><strong>Shampoo en la raíz:</strong> masajea con las yemas, nunca con las uñas.</span></li>
+              <li><span><strong>Acondicionador:</strong> de medios a puntas para desenredar y sellar la cutícula.</span></li>
+              <li><span><strong>Exfoliante capilar:</strong> mantiene los folículos libres de residuos.</span></li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false"><span class="acc-num">03</span><span class="acc-title"><strong>Corte y texturización</strong><span>Estructura y peinado</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <p>Elige cortes que armonicen con la geometría de tu cara.</p>
+            <ul class="list">
+              <li><span><strong>Visagismo:</strong> rostro redondo gana con volumen alto; rostro alargado, con volumen lateral.</span></li>
+              <li><span><strong>Ceras y arcillas mate:</strong> fijación flexible sin brillo para un look moderno.</span></li>
+              <li><span><strong>Protector térmico:</strong> indispensable si usas secador.</span></li>
+              <li><span><strong>Mantenimiento:</strong> recorta contornos y patillas cada 2–3 semanas.</span></li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" aria-expanded="false"><span class="acc-num">04</span><span class="acc-title"><strong>Reglas de oro</strong><span>Qué hacer y qué evitar</span></span><span class="acc-icon"></span></button>
+          <div class="acc-body"><div><div class="acc-content">
+            <div class="cols">
+              <div>
+                <h4>Hacer</h4>
+                <ul class="list">
+                  <li><span>Secar con toalla a toques, sin frotar.</span></li>
+                  <li><span>Aclarar con agua tibia o fresca para dar brillo.</span></li>
+                  <li><span>Usar peine de dientes anchos con el cabello húmedo.</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Evitar</h4>
+                <ul class="list">
+                  <li><span>Lavar a diario con shampoo agresivo.</span></li>
+                  <li><span>Aplicar ceras o pomadas sobre el cuero cabelludo.</span></li>
+                  <li><span>Usar secador a máxima temperatura sin protección.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta reveal">
+    <h2>Eleva tu <em>estándar.</em></h2>
+    <p>La constancia silenciosa produce resultados extraordinarios. Comienza tu protocolo hoy.</p>
+    <a href="#selector" class="btn-light" data-scroll-picker>Elegir mi protocolo</a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 <strong>LOOKMAX</strong> — Protocolo de cuidado personal y estética.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.getElementById('header');
+  const panel = document.getElementById('profilePanel');
+  const cards = document.querySelectorAll('.profile-card');
+  const bodies = document.querySelectorAll('.panel-body');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const burger = document.getElementById('burger');
+  let current = null;
+
+  /* Navbar al hacer scroll */
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Menú móvil */
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('show');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.addEventListener('click', e => {
+    if (e.target.closest('a,button')) { mobileMenu.classList.remove('show'); burger.setAttribute('aria-expanded', 'false'); }
+  });
+
+  /* Reveal con IntersectionObserver */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('active'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Acordeones */
+  document.querySelectorAll('.accordion').forEach(acc => {
+    acc.addEventListener('click', e => {
+      const head = e.target.closest('.acc-head');
+      if (!head || !acc.contains(head)) return;
+      const item = head.parentElement;
+      const willOpen = !item.classList.contains('open');
+      if (acc.hasAttribute('data-single')) {
+        acc.querySelectorAll(':scope > .acc-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.acc-head').setAttribute('aria-expanded', 'false');
+        });
+      }
+      item.classList.toggle('open', willOpen);
+      head.setAttribute('aria-expanded', willOpen);
+    });
+  });
+
+  /* Selector de perfil */
+  function closePanel() {
+    panel.classList.remove('open');
+    cards.forEach(c => c.setAttribute('aria-expanded', 'false'));
+    current = null;
+  }
+
+  function openProfile(name, scroll = true) {
+    if (current === name) { closePanel(); return; }
+    bodies.forEach(b => { b.hidden = b.dataset.profile !== name; });
+    cards.forEach(c => c.setAttribute('aria-expanded', c.dataset.openProfile === name));
+    panel.classList.add('open');
+    current = name;
+    if (scroll) {
+      const target = document.getElementById('selector');
+      const top = target.getBoundingClientRect().top + window.scrollY + 60;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+  }
+
+  document.querySelectorAll('[data-open-profile]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.openProfile;
+      // desde el menú siempre abrir (no alternar)
+      if (!btn.classList.contains('profile-card') && current === name) {
+        document.getElementById('selector').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      openProfile(name);
+    });
+  });
+
+  document.querySelectorAll('[data-close-panel]').forEach(b => b.addEventListener('click', closePanel));
+  document.querySelectorAll('[data-scroll-picker]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('selector').scrollIntoView({ behavior: 'smooth' });
+  }));
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && current) closePanel(); });
+});
+
+/* ============ COMPARADOR ANTES / DESPUÉS ============ */
+(function () {
+  const hosts = document.querySelectorAll('[data-ba]');
+  if (!hosts.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function rng(seed) {
+    return function () {
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  const f1 = n => n.toFixed(1);
+
+  /* ---- Retrato realista (SVG procedural: luz, textura de piel, ojos, cejas y cabello por hebras) ---- */
+  const bz = (P, t) => { const u = 1 - t, a = u * u * u, b = 3 * u * u * t, c = 3 * u * t * t, d = t * t * t; return [a * P[0][0] + b * P[1][0] + c * P[2][0] + d * P[3][0], a * P[0][1] + b * P[1][1] + c * P[2][1] + d * P[3][1]]; };
+  const bd = (P, t) => { const u = 1 - t; return [3 * u * u * (P[1][0] - P[0][0]) + 6 * u * t * (P[2][0] - P[1][0]) + 3 * t * t * (P[3][0] - P[2][0]), 3 * u * u * (P[1][1] - P[0][1]) + 6 * u * t * (P[2][1] - P[1][1]) + 3 * t * t * (P[3][1] - P[2][1])]; };
+  const nrm = v => { const m = Math.hypot(v[0], v[1]) || 1; return [v[0] / m, v[1] / m]; };
+  const lerpC = (A, B, u) => A.map((p, i) => [p[0] + (B[i][0] - p[0]) * u, p[1] + (B[i][1] - p[1]) * u]);
+
+  const FACE = 'M200 62 C146 62 106 96 102 156 C100 192 102 226 106 256 C112 306 128 350 152 382 C168 402 186 412 200 412 C214 412 232 402 248 382 C272 350 288 306 294 256 C298 226 300 192 298 156 C294 96 254 62 200 62 Z';
+  const EYE = ['M', 134, 234, 'C', 141, 223, 154, 219, 166, 222, 'C', 171, 224, 175, 229, 177, 234, 'C', 170, 241, 148, 242, 134, 234, 'Z'];
+  const LID1 = [[134, 234], [141, 223], [154, 219], [166, 222]];
+  const LID2 = [[166, 222], [171, 224], [175, 229], [177, 234]];
+  const BROW = [[184, 210], [172, 199], [146, 190], [119, 208]];
+  // cabello: borde del flequillo (B) y silueta exterior (O), derecha e izquierda
+  const B_R = [[168, 106], [190, 96], [262, 96], [294, 168]];
+  const O_R = [[200, 44], [262, 44], [306, 100], [304, 172]];
+  const B_L = [[168, 106], [146, 112], [120, 132], [108, 170]];
+  const O_L = [[200, 44], [138, 44], [92, 100], [96, 172]];
+
+  function build(id, kind, state) {
+    const bad = state === 'before';
+    const skinBad = kind === 'skin' && bad;
+    const hairBad = kind === 'hair' && bad;
+    const rnd = rng(kind === 'skin' ? 31 : 57);
+    const R = (a, b) => a + (b - a) * rnd();
+    const X = (s, x) => s > 0 ? 400 - x : x;
+    const pth = (s, a) => { let o = '', i = 0; a.forEach(t => { if (typeof t === 'string') { o += t + ' '; i = 0; } else { o += f1(i % 2 === 0 ? X(s, t) : t) + ' '; i++; } }); return o; };
+    const ell = (x, y, rx, ry, c, o) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${c}" opacity="${o}"/>`;
+    const sym = (x, y, rx, ry, c, oL, oR) => ell(x, y, rx, ry, c, oL) + ell(400 - x, y, rx, ry, c, oR == null ? oL : oR);
+    const hpal = skinBad ? ['#e5bc9b', '#cb997a', '#a06d58'] : ['#efc9a8', '#d9a886', '#ae7b62'];
+    const [hi, mid, lo] = hpal;
+
+    /* ================= PIEL ================= */
+    let shade = '';
+    // formas grandes (blur 8)
+    let g8 = '';
+    g8 += ell(200, 128, 62, 26, '#fff', skinBad ? .26 : .18);
+    g8 += ell(200, 222, 92, 12, '#6b3a30', .16);
+    g8 += sym(156, 234, 32, 19, '#7a4a44', skinBad ? .3 : .2);
+    g8 += sym(130, 278, 26, 15, '#fff', .14, .06);
+    g8 += sym(134, 294, 28, 16, '#d4756c', skinBad ? .22 : .2);
+    g8 += sym(112, 192, 12, 40, '#5a2f22', .2, .26);
+    g8 += ell(200, 402, 84, 24, '#4a2519', .3);
+    g8 += sym(156, 250, 26, 6, skinBad ? '#6b4a63' : '#8a5a58', skinBad ? .34 : .13);
+    if (skinBad) {
+      [[132, 282, 28, 18, .3], [268, 282, 28, 18, .3], [200, 272, 12, 26, .24], [200, 388, 30, 12, .18], [170, 160, 26, 12, .2], [236, 166, 22, 10, .18], [200, 300, 16, 8, .22]].forEach(a => { g8 += ell(a[0], a[1], a[2], a[3], '#d24a44', a[4]); });
+    }
+    // nariz, pliegues, labios (blur 3.5)
+    let g3 = '';
+    g3 += `<path d="M199 226 L199 292" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="${skinBad ? .26 : .2}"/>`;
+    g3 += `<path d="M184 240 C180 262 178 282 176 300" stroke="#5a2f22" stroke-width="6" fill="none" opacity=".16"/>`;
+    g3 += `<path d="M216 240 C220 262 222 282 224 300" stroke="#5a2f22" stroke-width="7" fill="none" opacity=".27"/>`;
+    g3 += ell(179, 302, 9, 7, '#8a5042', .22) + ell(221, 302, 9, 7, '#8a5042', .3);
+    g3 += ell(200, 296, 7, 5, '#fff', skinBad ? .3 : .2);
+    g3 += ell(200, 311, 20, 5, '#4a2219', .42);
+    g3 += `<path d="M176 304 C166 320 160 334 158 348" stroke="#5a2f22" stroke-width="5" fill="none" opacity=".12"/><path d="M224 304 C234 320 240 334 242 348" stroke="#5a2f22" stroke-width="5" fill="none" opacity=".18"/>`;
+    g3 += ell(200, 371, 22, 5, '#4a2219', .22) + ell(200, 392, 20, 8, '#fff', .14);
+    g3 += ell(163, 347, 5, 3, '#4a2219', .3) + ell(237, 347, 5, 3, '#4a2219', .3);
+    g3 += ell(197, 330, 2.5, 7, '#fff', .12) + `<path d="M193 316 L194 333 M207 316 L206 333" stroke="#5a2f22" stroke-width="2" opacity=".12"/>`;
+    // sombra del flequillo sobre la frente
+    g3 += `<path d="M${B_R.map((p, i) => (i === 0 ? 'M' : i === 1 ? 'C' : '') + p.join(' ')).join(' ').replace(/^M/, 'M')}" fill="none" stroke="#2a140d" stroke-width="10" opacity=".35"/>`;
+    g3 += `<path d="M${B_L.map((p, i) => (i === 0 ? '' : i === 1 ? 'C' : '') + p.join(' ')).join(' ').replace(/^/, '')}" fill="none" stroke="#2a140d" stroke-width="8" opacity=".25"/>`;
+
+    // luces sobre piel con brillo (antes) / luminosa (después)
+    let glow = '';
+    if (skinBad) {
+      [[200, 128, 34, 10, .5], [199, 262, 4, 26, .5], [124, 262, 12, 5, .4], [276, 262, 12, 5, .3], [200, 392, 12, 4, .35], [156, 164, 12, 4, .3], [246, 162, 12, 4, .3]].forEach(a => { glow += ell(a[0], a[1], a[2], a[3], '#fff6e8', a[4]); });
+      glow += ell(200, 298, 5, 3, '#fff', .7);
+    } else {
+      [[134, 270, 22, 9, .16], [266, 270, 22, 9, .08], [200, 126, 40, 9, .14], [200, 262, 3, 20, .16]].forEach(a => { glow += ell(a[0], a[1], a[2], a[3], '#fff6ea', a[4]); });
+    }
+
+    // manchas, poros, granitos
+    let marks = '', pores = '', pim = '', halo = '';
+    if (skinBad) {
+      [[150, 300, 5, 3], [250, 296, 5, 3.4], [130, 252, 6, 3.5], [272, 248, 5, 3], [190, 150, 5, 3], [222, 372, 5, 3], [118, 300, 4, 3], [286, 296, 4, 3]].forEach(a => { marks += ell(a[0], a[1], a[2], a[3], '#8a5a3c', .38); });
+      for (let i = 0; i < 150; i++) {
+        const reg = i % 5;
+        let x, y;
+        if (reg < 2) { x = R(178, 222); y = R(256, 304); }
+        else if (reg === 2) { x = R(112, 172); y = R(262, 324); }
+        else if (reg === 3) { x = R(228, 290); y = R(262, 324); }
+        else { x = R(150, 250); y = R(140, 192); }
+        pores += `<ellipse cx="${f1(x)}" cy="${f1(y)}" rx="${f1(R(.5, 1.1))}" ry="${f1(R(.5, 1))}" fill="#6b3c2e" opacity="${f1(R(.28, .5))}"/>`;
+      }
+      [[126, 266, 3.4], [118, 288, 2.6], [142, 306, 3], [134, 324, 2.4], [270, 276, 3.4], [282, 262, 2.4], [262, 302, 3], [276, 320, 2.6], [162, 176, 2.6], [238, 182, 3.2], [205, 168, 2.4], [170, 362, 2.6], [232, 372, 3], [200, 396, 3.2], [140, 340, 2.2], [296, 300, 2.2]].forEach((a, i) => {
+        halo += `<circle cx="${a[0]}" cy="${a[1]}" r="${f1(a[2] * 3.2)}" fill="#d8584e" opacity=".3"/>`;
+        pim += `<circle cx="${a[0]}" cy="${a[1]}" r="${a[2]}" fill="url(#pm${id})"/><circle cx="${f1(a[0] - a[2] * .3)}" cy="${f1(a[1] - a[2] * .4)}" r="${f1(a[2] * .3)}" fill="#fff" opacity=".55"/>`;
+        if (i % 3 === 0) pim += `<circle cx="${a[0]}" cy="${f1(a[1] - a[2] * .1)}" r="${f1(a[2] * .42)}" fill="#f4e4d0"/>`;
+      });
+    }
+
+    /* ================= OJOS / CEJAS ================= */
+    const eyeSVG = s => {
+      const d = pth(s, EYE);
+      const cx = X(s, 155.2), cy = 231.4;
+      const cid = `ce${s < 0 ? 'L' : 'R'}${id}`;
+      let fib = '';
+      for (let i = 0; i < 46; i++) {
+        const a = (i / 46) * Math.PI * 2 + R(0, .1), r1 = R(3.6, 5), r2 = R(8.6, 10);
+        fib += `<line x1="${f1(cx + Math.cos(a) * r1)}" y1="${f1(cy + Math.sin(a) * r1)}" x2="${f1(cx + Math.cos(a) * r2)}" y2="${f1(cy + Math.sin(a) * r2)}" stroke="${i % 2 ? '#d1a36a' : '#1d110a'}" stroke-width=".45" opacity="${i % 2 ? .3 : .38}"/>`;
+      }
+      let lashes = '';
+      for (let i = 0; i < 34; i++) {
+        const seg = i < 20 ? LID1 : LID2;
+        const t = i < 20 ? (i + .5) / 20 : (i - 19.5) / 14;
+        const p = bz(seg, t), n = nrm([bd(seg, t)[1], -bd(seg, t)[0]]);
+        const w = i < 20 ? 1 - t * .5 : .5 - t * .4;
+        const dir = nrm([n[0] - .55 * w, n[1] - .1]);
+        const len = R(3.4, 6.4) * (.7 + w * .6);
+        const e = [p[0] + dir[0] * len, p[1] + dir[1] * len - len * .12];
+        const c = [p[0] + dir[0] * len * .5, p[1] + dir[1] * len * .5 - 1];
+        lashes += `<path d="${pth(s, ['M', f1(p[0]), f1(p[1]), 'Q', f1(c[0]), f1(c[1]), f1(e[0]), f1(e[1])].map(v => typeof v === 'string' ? v : +v))}" fill="none" stroke="#0e0806" stroke-width="${f1(R(.55, .95))}" stroke-linecap="round" opacity=".88"/>`;
+      }
+      for (let i = 0; i < 10; i++) {
+        const t = R(.15, .85), p = bz([[134, 234], [148, 242], [170, 241], [177, 234]], t);
+        lashes += `<path d="${pth(s, ['M', f1(p[0]), f1(p[1]), 'L', f1(p[0] - R(0, 1.4)), f1(p[1] + R(2, 3.4))])}" stroke="#1a100b" stroke-width=".5" opacity=".5"/>`;
+      }
+      return `
+      <clipPath id="${cid}"><path d="${d}"/></clipPath>
+      <path d="${d}" fill="url(#sc${id})"/>
+      <g clip-path="url(#${cid})">
+        <circle cx="${cx}" cy="${cy}" r="10.6" fill="url(#ir${id})"/>
+        ${fib}
+        <circle cx="${cx}" cy="${cy}" r="10.3" fill="none" stroke="#1b100a" stroke-width="1.5" opacity=".75"/>
+        <circle cx="${cx}" cy="${cy}" r="4.1" fill="#050303"/>
+        <ellipse cx="${X(s, 150.6)}" cy="${f1(cy - 5)}" rx="2.3" ry="1.8" fill="#fff" opacity=".92"/>
+        <ellipse cx="${X(s, 159)}" cy="${f1(cy + 3.6)}" rx="1.2" ry=".8" fill="#fff" opacity=".4"/>
+        <path d="${d}" fill="url(#ls${id})"/>
+        <path d="${pth(s, ['M', 134, 233, 'C', 142, 228, 152, 226, 160, 227, 'L', 177, 234, 'L', 134, 240, 'Z'])}" fill="#3a1a14" opacity=".08"/>
+      </g>
+      <ellipse cx="${X(s, 175.6)}" cy="234.2" rx="2.8" ry="2" fill="#d68d86" opacity=".8" filter="url(#b1${id})"/>
+      <path d="${pth(s, ['M', 131, 231, 'C', 140, 214, 157, 208, 169, 212, 'C', 176, 215, 180, 222, 182, 230])}" fill="none" stroke="#7a4a40" stroke-width="1.1" opacity=".5" filter="url(#b1${id})"/>
+      <path d="${pth(s, ['M', 134, 234, 'C', 141, 223, 154, 219, 166, 222, 'C', 171, 224, 175, 229, 177, 234])}" fill="none" stroke="#0e0806" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="${pth(s, ['M', 134, 234, 'C', 148, 242, 170, 241, 177, 234])}" fill="none" stroke="#6b3f36" stroke-width=".8" opacity=".6"/>
+      <path d="${pth(s, ['M', 140, 236, 'C', 152, 240, 168, 239, 175, 235])}" fill="none" stroke="#d98f88" stroke-width="1" opacity=".4"/>
+      ${lashes}`;
+    };
+
+    const browSVG = s => {
+      let h = '';
+      const th = t => t < .35 ? 6.5 + t * 7 : 9 * (1 - (t - .35) / .65 * .82);
+      for (let i = 0; i < 270; i++) {
+        const t = rnd();
+        const p = bz(BROW, t), tg = nrm(bd(BROW, t)), n = [tg[1], -tg[0]];
+        const off = (rnd() - .5) * th(t);
+        const b = [p[0] + n[0] * off, p[1] + n[1] * off];
+        const up = (1 - t) * .9 + (off < 0 ? .12 : 0);
+        const dir = nrm([-tg[0] * -1 + n[0] * up * -1, tg[1] * 0 + 0]);
+        // dirección hacia la cola (tg apunta hacia la cola) con inclinación hacia arriba cerca del extremo interno
+        const dv = nrm([tg[0] + n[0] * up, tg[1] + n[1] * up]);
+        const len = R(5, 9) * (t < .3 ? .85 : 1);
+        const e = [b[0] + dv[0] * len, b[1] + dv[1] * len];
+        const c = [b[0] + dv[0] * len * .5 + n[0] * .8, b[1] + dv[1] * len * .5 + n[1] * .8];
+        h += `<path d="${pth(s, ['M', f1(b[0]), f1(b[1]), 'Q', f1(c[0]), f1(c[1]), f1(e[0]), f1(e[1])])}" fill="none" stroke="${['#1d130d', '#2a1b13', '#35241a'][i % 3]}" stroke-width="${f1(R(.6, 1.05))}" stroke-linecap="round" opacity="${f1(R(.55, .92))}"/>`;
+      }
+      const under = `<path d="${pth(s, ['M', 184, 210, 'C', 172, 199, 146, 190, 119, 208])}" fill="none" stroke="#2a1b13" stroke-width="5" stroke-linecap="round" opacity=".38"/>`;
+      return { under, hairs: h };
+    };
+    const bl = browSVG(-1), br = browSVG(1);
+
+    /* ================= LABIOS ================= */
+    const lipUp = skinBad ? ['#a8685f', '#8a4a43'] : ['#b06259', '#8d4640'];
+    const lipLo = skinBad ? ['#c58a7c', '#b0746a'] : ['#cc8379', '#b86b64'];
+    let cracks = '';
+    if (skinBad) for (let i = 0; i < 9; i++) { const x = R(178, 222); cracks += `<path d="M${f1(x)} ${f1(R(353, 357))} l${f1(R(-.6, .6))} ${f1(R(5, 8))}" stroke="#8a5148" stroke-width=".5" opacity=".4"/>`; }
+    const lips = `
+      <path d="M168 347 C180 351 190 352 200 352 C210 352 220 351 232 347 C228 358 216 365 200 365 C184 365 172 358 168 347 Z" fill="url(#ll${id})"/>
+      <path d="M166 346 C176 342 186 335 196 337 C198 338 202 338 204 337 C214 335 224 342 234 346 C224 349 212 351 200 351 C188 351 176 349 166 346 Z" fill="url(#lu${id})"/>
+      <ellipse cx="198" cy="358" rx="10" ry="2.2" fill="#fff" opacity="${skinBad ? .12 : .28}" filter="url(#b2${id})"/>
+      <ellipse cx="190" cy="341" rx="6" ry="1.4" fill="#fff" opacity=".14" filter="url(#b1${id})"/>
+      <path d="M165 346.5 C180 350.5 190 351.5 200 351.5 C210 351.5 220 350.5 235 346.5" fill="none" stroke="#4a201c" stroke-width="1.4" opacity=".85" filter="url(#b1${id})"/>
+      ${cracks}`;
+
+    /* ================= CABELLO ================= */
+    const hairPal = hairBad ? ['#3b2d23', '#4a392c', '#5a4636', '#6f5a47', '#2a1f18'] : ['#0e0805', '#17100a', '#21160e', '#2e1e13', '#3d2a1b'];
+    const pathB = P => `M${P[0].join(' ')} C${P[1].join(' ')} ${P[2].join(' ')} ${P[3].join(' ')}`;
+    const hairBase = `M96 172 C90 100 130 44 200 42 C270 44 312 100 304 172 L294 168 C288 128 266 98 232 98 C204 96 184 100 168 106 C146 112 124 132 108 170 Z`;
+    let strands = '', fly = '', extra = '';
+    const NS = hairBad ? 560 : 700, wob = hairBad ? 3.2 : .9;
+    for (let i = 0; i < NS; i++) {
+      const right = rnd() < .64;
+      const Bc = right ? B_R : B_L, Oc = right ? O_R : O_L;
+      const lock = Math.floor(rnd() * 30);
+      const u = hairBad ? clamp01(lock / 30 + R(-.07, .09)) : clamp01((lock + R(0, .6)) / 30);
+      const C = lerpC(Bc, Oc, u);
+      const t0 = R(0, .22), t1 = R(.78, 1);
+      let pts = '';
+      const ph = rnd() * 6.28, k = R(.6, 1.4);
+      for (let j = 0; j <= 9; j++) {
+        const t = t0 + (t1 - t0) * j / 9, p = bz(C, t), tg = nrm(bd(C, t));
+        const w = Math.sin(t * 9 * k + ph) * wob * (hairBad ? 1 : .6) + (rnd() - .5) * (hairBad ? 1.4 : .3);
+        pts += (j ? 'L' : 'M') + f1(p[0] - tg[1] * w) + ' ' + f1(p[1] + tg[0] * w) + ' ';
+      }
+      const hot = rnd() < (hairBad ? .12 : .2);
+      const col = hot ? (hairBad ? '#8a7664' : '#6a4a32') : hairPal[Math.floor(rnd() * hairPal.length)];
+      strands += `<path d="${pts}" fill="none" stroke="${col}" stroke-width="${f1(R(.45, hairBad ? .9 : 1.05))}" stroke-linecap="round" opacity="${f1(hot ? R(.18, .34) : R(.45, .85))}"/>`;
+    }
+    // pelillos del nacimiento del cabello
+    for (let i = 0; i < 46; i++) {
+      const right = rnd() < .64, Bc = right ? B_R : B_L, t = R(.05, .98), p = bz(Bc, t), tg = nrm(bd(Bc, t));
+      extra += `<path d="M${f1(p[0])} ${f1(p[1])} l${f1(tg[0] * R(3, 7) + R(-1, 1))} ${f1(tg[1] * R(3, 7) + R(-1, 1))}" stroke="#2a1b13" stroke-width=".5" opacity=".3" fill="none"/>`;
+    }
+    // brillo del cabello sano
+    let sheen = '';
+    if (!hairBad) {
+      [[.62, 6, .34], [.3, 3.5, .26], [.85, 3, .22]].forEach(a => {
+        [B_R, B_L].forEach((Bc, k) => {
+          const C = lerpC(Bc, k ? O_L : O_R, a[0]);
+          let d = '';
+          for (let j = 0; j <= 14; j++) { const p = bz(C, .12 + .76 * j / 14); d += (j ? 'L' : 'M') + f1(p[0]) + ' ' + f1(p[1]) + ' '; }
+          sheen += `<path d="${d}" fill="none" stroke="#fff3e6" stroke-width="${a[1]}" stroke-linecap="round" opacity="${k ? a[2] * .6 : a[2]}"/>`;
+        });
+      });
+    } else {
+      // zonas ralas, caspa y frizz
+      extra += `<g filter="url(#b4${id})">${sym(120, 148, 12, 18, mid, .55, .5)}${ell(200, 70, 4, 18, mid, .3)}</g>`;
+      for (let i = 0; i < 70; i++) {
+        const x = R(108, 294), y = R(52, 158);
+        if (Math.pow((x - 200) / 104, 2) + Math.pow((y - 172) / 126, 2) > .9 || y > 106 + Math.abs(x - 168) / 130 * 62) continue;
+        extra += `<ellipse cx="${f1(x)}" cy="${f1(y)}" rx="${f1(R(1.1, 2.3))}" ry="${f1(R(.6, 1.2))}" fill="#f6f2ea" opacity="${f1(R(.55, .9))}" transform="rotate(${Math.round(rnd() * 180)} ${f1(x)} ${f1(y)})"/>`;
+      }
+      for (let i = 0; i < 150; i++) {
+        const right = rnd() < .5, Oc = right ? O_R : O_L, t = R(.05, .98), p = bz(Oc, t);
+        const dv = nrm([p[0] - 200 + R(-14, 14), p[1] - 170 + R(-14, 14)]), len = R(8, 26), cv = R(-9, 9), pp = [-dv[1], dv[0]];
+        fly += `<path d="M${f1(p[0])} ${f1(p[1])} C${f1(p[0] + dv[0] * len * .4 + pp[0] * cv)} ${f1(p[1] + dv[1] * len * .4 + pp[1] * cv)} ${f1(p[0] + dv[0] * len * .8 - pp[0] * cv)} ${f1(p[1] + dv[1] * len * .8 - pp[1] * cv)} ${f1(p[0] + dv[0] * len + pp[0] * cv * 1.4)} ${f1(p[1] + dv[1] * len + pp[1] * cv * 1.4)}" fill="none" stroke="#3a2c22" stroke-width="${f1(R(.4, .8))}" opacity="${f1(R(.5, .85))}"/>`;
+      }
+    }
+    function clamp01(v) { return Math.max(0, Math.min(1, v)); }
+
+    /* ================= OREJAS ================= */
+    const ear = s => `<path d="${pth(s, ['M', 106, 208, 'C', 94, 202, 85, 220, 87, 242, 'C', 89, 262, 98, 278, 111, 280, 'L', 113, 262, 'C', 106, 248, 106, 228, 106, 208, 'Z'])}" fill="${mid}"/>
+      <path d="${pth(s, ['M', 103, 214, 'C', 95, 212, 92, 226, 94, 242, 'C', 96, 256, 101, 266, 108, 268])}" fill="none" stroke="#7a4636" stroke-width="2.6" opacity=".4" filter="url(#b1${id})"/>`;
+
+    const vb = kind === 'skin' ? '56 150 288 216' : '50 36 300 225';
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Retrato referencial: ${kind === 'skin' ? 'piel' : 'cabello'} ${bad ? 'antes' : 'después'}">
+      <defs>
+        <radialGradient id="bg${id}" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#e8e1d7"/><stop offset="1" stop-color="#b9afa2"/></radialGradient>
+        <radialGradient id="sk${id}" cx=".45" cy=".36" r=".78"><stop offset="0" stop-color="${hi}"/><stop offset=".55" stop-color="${mid}"/><stop offset="1" stop-color="${lo}"/></radialGradient>
+        <linearGradient id="sd${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a2f22" stop-opacity=".16"/><stop offset=".25" stop-color="#5a2f22" stop-opacity="0"/><stop offset=".62" stop-color="#5a2f22" stop-opacity="0"/><stop offset="1" stop-color="#3f1d13" stop-opacity=".4"/></linearGradient>
+        <radialGradient id="sc${id}" cx=".5" cy=".5" r=".62"><stop offset="0" stop-color="#f3eee7"/><stop offset=".7" stop-color="#e2d8cf"/><stop offset="1" stop-color="#bfb0a6"/></radialGradient>
+        <radialGradient id="ir${id}" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#a98150"/><stop offset=".35" stop-color="#7d5a35"/><stop offset=".72" stop-color="#4b311c"/><stop offset="1" stop-color="#241509"/></radialGradient>
+        <linearGradient id="ls${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a100c" stop-opacity=".7"/><stop offset=".42" stop-color="#2a100c" stop-opacity="0"/></linearGradient>
+        <radialGradient id="pm${id}" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#e58a7c"/><stop offset="1" stop-color="#b53f38"/></radialGradient>
+        <linearGradient id="lu${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${lipUp[0]}"/><stop offset="1" stop-color="${lipUp[1]}"/></linearGradient>
+        <linearGradient id="ll${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${lipLo[0]}"/><stop offset="1" stop-color="${lipLo[1]}"/></linearGradient>
+        <linearGradient id="hg${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${hairBad ? '#4f3e31' : '#2b1c12'}"/><stop offset="1" stop-color="${hairBad ? '#2e231b' : '#0e0805'}"/></linearGradient>
+        <radialGradient id="vg${id}" cx=".5" cy=".45" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></radialGradient>
+        <filter id="b1${id}" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation=".7"/></filter>
+        <filter id="b2${id}" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.8"/></filter>
+        <filter id="b3${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feGaussianBlur stdDeviation="3.5"/></filter>
+        <filter id="b4${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feGaussianBlur stdDeviation="4"/></filter>
+        <filter id="b8${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feGaussianBlur stdDeviation="8"/></filter>
+        <filter id="b14${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feGaussianBlur stdDeviation="14"/></filter>
+        <filter id="b25${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feGaussianBlur stdDeviation="2.4"/></filter>
+        <filter id="tx${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feTurbulence type="fractalNoise" baseFrequency="1.15" numOctaves="3" seed="${skinBad ? 7 : 4}" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 .3  0 0 0 0 .15  0 0 0 0 .1  1.7 0 0 0 -.66"/></filter>
+        <filter id="mt${id}" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="500"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="${skinBad ? 12 : 3}" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 .78  0 0 0 0 .34  0 0 0 0 .28  0 1.5 0 0 -.62"/></filter>
+        <filter id="gr${id}" filterUnits="userSpaceOnUse" x="-100" y="-100" width="600" height="700"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="21"/><feColorMatrix type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.4 -.55"/></filter>
+        <clipPath id="cf${id}"><path d="${FACE}"/></clipPath>
+        <clipPath id="ch${id}"><path d="${hairBase}"/></clipPath>
+      </defs>
+
+      <rect x="-100" y="-100" width="600" height="700" fill="url(#bg${id})"/>
+      ${ear(-1)}${ear(1)}
+      <path d="${FACE}" fill="url(#sk${id})"/>
+      <g clip-path="url(#cf${id})">
+        <rect x="90" y="50" width="220" height="380" fill="url(#sd${id})"/>
+        <path d="${FACE}" fill="none" stroke="#6b3a2a" stroke-width="34" opacity=".32" filter="url(#b14${id})"/>
+        <g filter="url(#b8${id})">${g8}</g>
+        <g filter="url(#b3${id})">${g3}</g>
+        <g filter="url(#b4${id})">${glow}</g>
+        <rect x="90" y="50" width="220" height="380" filter="url(#mt${id})" opacity="${skinBad ? .5 : .22}"/>
+        <g filter="url(#b25${id})">${marks}${halo}</g>
+        <g filter="url(#b1${id})">${pores}</g>
+        <rect x="90" y="50" width="220" height="380" filter="url(#tx${id})" opacity="${skinBad ? .55 : .3}" style="mix-blend-mode:multiply"/>
+        ${pim}
+        <g filter="url(#b1${id})">${ell(189, 305, 5.5, 3, '#2a120d', .75)}${ell(211, 305, 5.5, 3, '#2a120d', .75)}</g>
+      </g>
+      <g filter="url(#b2${id})">${bl.under}${br.under}</g>
+      ${eyeSVG(-1)}${eyeSVG(1)}
+      ${bl.hairs}${br.hairs}
+      ${lips}
+
+      <g>
+        <path d="${hairBase}" fill="url(#hg${id})" opacity="${hairBad ? .9 : 1}"/>
+        <g clip-path="url(#ch${id})">${strands}${sheen}${extra}</g>
+        ${hairBad ? '' : ''}
+        ${fly}
+      </g>
+
+      <rect x="-100" y="-100" width="600" height="700" fill="url(#vg${id})"/>
+      <rect x="-100" y="-100" width="600" height="700" filter="url(#gr${id})" opacity=".06" style="mix-blend-mode:overlay"/>
+    </svg>`;
+  }
+
+  const META = {
+    skin: {
+      title: 'Antes y después: piel', tag: 'Ilustración referencial',
+      note: 'Brillo graso, poros dilatados, enrojecimiento, manchas y ojeras frente a un tono uniforme y luminoso. Con constancia (limpieza, activos y SPF diario) los cambios suelen notarse entre 6 y 12 semanas, y varían según cada piel.'
+    },
+    hair: {
+      title: 'Antes y después: cabello', tag: 'Ilustración referencial',
+      note: 'Frizz, resequedad, caspa y zonas ralas frente a un cabello definido, con brillo y bien peinado. La textura puede mejorar en 4–8 semanas; la densidad tarda meses y depende de cada caso.'
+    }
+  };
+
+  hosts.forEach((host, n) => {
+    const kind = host.dataset.ba;
+    const m = META[kind];
+    if (!m) return;
+    const uid = kind + n;
+    const origB = build(uid + 'b', kind, 'before');
+    const origA = build(uid + 'a', kind, 'after');
+
+    host.classList.add('ba');
+    host.innerHTML = `
+      <div class="ba-head"><strong>${m.title}</strong><span>${m.tag}</span></div>
+      <div class="ba-stage">
+        <div class="ba-layer before">${origB}</div>
+        <div class="ba-layer after">${origA}</div>
+        <span class="ba-tag l">Antes</span><span class="ba-tag r">Después</span>
+        <div class="ba-handle"><i>‹ ›</i></div>
+        <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después">
+      </div>
+      <p class="ba-note">${m.note}</p>
+      <div class="ba-tools">
+        <label class="ba-btn">＋ Mi foto de antes<input type="file" accept="image/*" data-slot="before"></label>
+        <label class="ba-btn">＋ Mi foto de después<input type="file" accept="image/*" data-slot="after"></label>
+        <button type="button" class="ba-btn" data-reset>Restablecer</button>
+        <span class="ba-priv">Tus fotos se muestran solo en tu navegador: no se suben a ningún servidor.</span>
+      </div>`;
+
+    const stage = host.querySelector('.ba-stage');
+    const range = host.querySelector('.ba-range');
+    const layers = { before: host.querySelector('.ba-layer.before'), after: host.querySelector('.ba-layer.after') };
+    const orig = { before: origB, after: origA };
+    const urls = { before: null, after: null };
+
+    // Fotos reales fijas: <figure data-ba="skin" data-before-src="antes.jpg" data-after-src="despues.jpg">
+    ['before', 'after'].forEach(k => {
+      const src = host.dataset[k + 'Src'];
+      if (!src) return;
+      const img = new Image();
+      img.alt = k === 'before' ? 'Foto de antes' : 'Foto de después';
+      img.onload = () => { layers[k].innerHTML = ''; layers[k].appendChild(img); };
+      img.src = src;
+    });
+
+    const setPos = v => stage.style.setProperty('--pos', v + '%');
+    range.addEventListener('input', () => { cancelAnimationFrame(raf); setPos(range.value); });
+
+    host.querySelectorAll('input[type=file]').forEach(inp => {
+      inp.addEventListener('change', () => {
+        const file = inp.files && inp.files[0];
+        const slot = inp.dataset.slot;
+        if (!file || !file.type.startsWith('image/')) return;
+        if (urls[slot]) URL.revokeObjectURL(urls[slot]);
+        urls[slot] = URL.createObjectURL(file);
+        const img = new Image();
+        img.src = urls[slot];
+        img.alt = slot === 'before' ? 'Tu foto de antes' : 'Tu foto de después';
+        layers[slot].innerHTML = '';
+        layers[slot].appendChild(img);
+        inp.value = '';
+      });
+    });
+    host.querySelector('[data-reset]').addEventListener('click', () => {
+      ['before', 'after'].forEach(k => {
+        if (urls[k]) { URL.revokeObjectURL(urls[k]); urls[k] = null; }
+        layers[k].innerHTML = orig[k];
+      });
+      range.value = 50; setPos(50);
+    });
+
+    // pequeña animación de entrada
+    let raf = 0;
+    if (!reduce && 'IntersectionObserver' in window) {
+      setPos(94); range.value = 94;
+      const io = new IntersectionObserver(es => {
+        if (!es[0].isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now(), dur = 1500;
+        (function f(now) {
+          const k = Math.min(1, (now - t0) / dur);
+          const e = 1 - Math.pow(1 - k, 3);
+          const v = 94 - 44 * e;
+          range.value = v; setPos(v);
+          if (k < 1) raf = requestAnimationFrame(f);
+        })(t0);
+      }, { threshold: .45 });
+      io.observe(stage);
+    }
+  });
+})();
+</script>
+</body>
+</html>
